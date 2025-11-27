@@ -11,13 +11,19 @@ function App() {
   const [data, setData] = useState(null);
   const [error, setError] = useState('');
 
+  // FIX 1: Use the Environment Variable provided by Vercel
+  // If running locally, it falls back to localhost.
+  const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+
   const fetchData = async () => {
     setLoading(true);
     setError('');
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/stock/${ticker}`);
+      // FIX 2: Use the dynamic API_URL instead of hardcoded localhost
+      const response = await axios.get(`${API_URL}/api/stock/${ticker}`);
       setData(response.data);
     } catch (err) {
+      console.error("Fetch error:", err); // Log the actual error for debugging
       setError('Failed to fetch data. Please check the symbol.');
     } finally {
       setLoading(false);
@@ -47,7 +53,10 @@ function App() {
 
           <div className="flex gap-2">
             <div className="relative">
+              {/* FIX 3: Added id and name to fix the browser warning */}
               <input
+                id="ticker-input"
+                name="ticker"
                 type="text"
                 value={ticker}
                 onChange={(e) => setTicker(e.target.value.toUpperCase())}
