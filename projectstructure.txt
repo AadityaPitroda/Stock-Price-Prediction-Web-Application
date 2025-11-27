@@ -1,0 +1,19 @@
+stock-ai-predictor/
+├── backend/
+│   ├── venv/                 # Python Virtual Environment
+│   ├── model/
+│   │   └── Stock Predictions Model.keras  # Place your model here
+│   ├── main.py               # API Server (FastAPI)
+│   └── requirements.txt      # Python dependencies
+├── frontend/
+│   ├── node_modules/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── StockChart.jsx
+│   │   │   └── PredictionCard.jsx
+│   │   ├── App.jsx
+│   │   └── index.css         # Tailwind directives
+│   ├── package.json
+│   ├── tailwind.config.js
+│   └── vite.config.js
+└── README.md

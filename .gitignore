@@ -1,0 +1,16 @@
+# Python
+backend/venv/
+__pycache__/
+*.pyc
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# System
+.DS_Store
+
+# Optional: Large Model Warning
+# If your .keras file is >100MB, you cannot push it to GitHub without Git LFS.
+# For now, we assume it is under 100MB.

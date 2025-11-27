@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #0f172a; /* Slate 900 Background */
+  color: #e2e8f0; /* Text Color */
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
